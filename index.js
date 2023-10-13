@@ -1,5 +1,6 @@
 import { Api } from './Api.js'
-import { rutasAPI } from './routes/rutasHoteles.js'
+import 'dotenv/config'
+// console.log(process.env)
 
 let servidor = new Api()//creando objeto de la clase Api
 
