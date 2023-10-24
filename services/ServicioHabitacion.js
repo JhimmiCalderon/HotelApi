@@ -8,7 +8,7 @@ export class ServicioHabitacion{
         return habitaciones
     }
     async buscarPorId(id){
-        let habitacion = await modeloHabitacion.find(id)
+        let habitacion = await modeloHabitacion.findById(id)
         return habitacion
     }
     async modificar(id,datos){
@@ -16,9 +16,9 @@ export class ServicioHabitacion{
     }
     async registrar(datos){
         let habitacionNueva =new modeloHabitacion(datos)
-        return await habitacionNueva.save
+        return await habitacionNueva.save()
     }
     async eliminar(id){
-        return await modeloHabitacion.deleteOne({_id: id})
+        return await modeloHabitacion.findByIdAndDelete(id)
     }
 }

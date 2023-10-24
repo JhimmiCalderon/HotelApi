@@ -18,8 +18,8 @@ export class Api {
   }
   //2.Atiende las peticiones y responde.
   procesarPeticiones() {
-    this.app.use('/',rutasAPI)
     this.app.use(express.json())//se envia en formato JSON
+    this.app.use('/',rutasAPI)
   }
   
   //3.Se conecta a la base de datos.

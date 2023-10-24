@@ -8,15 +8,15 @@ const Habitacion = new Schema({
         required: true
     },
     foto:{
-        type: String,
+        type:String,
         required: true
     },
     descripcion:{
-        type: String,
+        type:String,
         required: true
     },
     precio_noche:{
-        type: Number,
+        type:Number,
         required:true
     }
 })
