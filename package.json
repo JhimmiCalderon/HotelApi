@@ -12,11 +12,12 @@
     "servicios",
     "web"
   ],
-  "author": "Keith Alexander Calle Agudelo",
+  "author": "Jhimmi Calderon ",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "mongodb": "^6.3.0",
     "mongoose": "^7.6.1"
   }
 }

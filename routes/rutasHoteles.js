@@ -27,5 +27,3 @@ rutasAPI.get("/api/reserva/:id",controladorReservas.buscarPorId);
 rutasAPI.put("/api/reservas/:id",controladorReservas.modificar);
 rutasAPI.delete("/api/reservas/:id",controladorReservas.eliminar);
 
-//notas: header se envia solo un dato y/o parametro
-// body : varios datos ---> más de un dato

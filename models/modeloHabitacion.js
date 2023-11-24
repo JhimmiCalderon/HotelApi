@@ -1,6 +1,6 @@
-import mongoose from "mongoose"//permite hacer modelos
+import mongoose from "mongoose"
 
-const Schema = mongoose.Schema //atributo de mongoose
+const Schema = mongoose.Schema 
 
 const Habitacion = new Schema({
     nombre:{
@@ -21,4 +21,4 @@ const Habitacion = new Schema({
     }
 })
 
-export const modeloHabitacion = mongoose.model('habitaciones',Habitacion)//esto en conjunto es un modelo
+export const modeloHabitacion = mongoose.model('habitaciones',Habitacion)

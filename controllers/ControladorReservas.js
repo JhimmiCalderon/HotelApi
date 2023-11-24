@@ -7,13 +7,13 @@ export class ControladorReservas {
     try {
       let servicioReserva = new ServicioReserva();
       response.status(200).json({
-        mensaje: "exito buscando los datos",
-        datos: await servicioReserva.buscarTodas()
-      });
+        "mensaje": "exito buscando los datos",
+        "datos": await servicioReserva.buscarTodas()
+      })
     } catch (error) {
       response.status(400).json({
-        mensaje: "fallamos" + error,
-      });
+        "mensaje": "fallamos" + error,
+      })
     }
   }
   async buscarPorId(request, response) {
@@ -21,13 +21,13 @@ export class ControladorReservas {
       let servicioReserva = new ServicioReserva();
       let id = request.params.id;
       response.status(200).json({
-        mensaje: "exito buscando los datos",
-        datos: await servicioReserva.buscarPorId(id)
+        "mensaje": "exito buscando los datos",
+        "datos": await servicioReserva.buscarPorId(id)
       });
     } catch (error) {
       response.status(400).json({
-        mensaje: "fallamos" + error,
-      });
+       " mensaje": "fallamos" + error,
+      })
     }
   }
   async modificar(request, response) {
@@ -37,30 +37,32 @@ export class ControladorReservas {
       let datos = request.body;
       let respuesta = await servicioReserva.modificar(id, datos);
       response.status(200).json({
-        mensaje: "exito buscando los datos",
-        datos: respuesta,
+        "mensaje": "exito modificando los datos",
+        "datos": respuesta
       });
     } catch (error) {
       response.status(400).json({
-        mensaje: "fallamos" + error,
-      });
+        "mensaje": "fallamos" + error
+      })
     }
   }
   async registrar(request, response) {
     try {
       let servicioReserva = new ServicioReserva();
       let datos = request.body;
+      let respuesta = await servicioReserva.registrar(datos);  
+  
       if (datos.fechaInicioReserva && datos.fechaFinalReserva) {
         let diferencia = Math.floor(
           (new Date(datos.fechaFinalReserva) -
             new Date(datos.fechaInicioReserva)) /
             (1000 * 60 * 60 * 24)
         );
-
+  
         response.status(200).json({
           "mensaje": "Éxito registrando los datos",
-          "datos": datos,
-          "Dias a hospedar": diferencia,
+          "datos": respuesta,
+          "Dias a hospedar": diferencia
         });
       } else {
         response.status(400).json({
@@ -73,19 +75,20 @@ export class ControladorReservas {
       });
     }
   }
+  
   async eliminar(request, response) {
     try {
-      let servicioReserva = new ServicioReserva();
+      let servicioReserva = new ServicioReserva()
       let id = request.params.id;
-      // let respuesta = await servicioReserva.eliminar(id);
+      let respuesta = await servicioReserva.eliminar(id)
       response.status(200).json({
-        mensaje: "exito buscando los datos",
-        datos: id,
-      });
+        "mensaje": "exito Eliminando los datos",
+        "datos": respuesta
+      })
     } catch (error) {
       response.status(400).json({
-        mensaje: "fallamos" + error,
-      });
+        "mensaje": "fallamos" + error
+      })
     }
   }
 }

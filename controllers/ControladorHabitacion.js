@@ -37,7 +37,7 @@ export class ControladorHabitacion{
             let datos=request.body
             let respuesta = await servicioHabitacion.modificar(id,datos) //esto
             response.status(200).json({
-                "mensaje":"exito buscando los datos",
+                "mensaje":"exito Modificando los datos",
                 "datos": respuesta
             })
         }catch(error){
@@ -46,11 +46,12 @@ export class ControladorHabitacion{
             })
         }
     }
+
     async registrar(request,response){
         try{
             let servicioHabitacion = new ServicioHabitacion()
             let datos=request.body
-            // let respuesta = await servicioHabitacion.registrar(datos)
+            let respuesta = await servicioHabitacion.registrar(datos)
             response.status(200).json({
                 "mensaje":"exito registrando los datos",
                 "datos": datos,
@@ -67,7 +68,7 @@ export class ControladorHabitacion{
             let id=request.params.id
             let respuesta = await servicioHabitacion.eliminar(id)
             response.status(200).json({
-                "mensaje":"exito buscando los datos",
+                "mensaje":"exito Eliminando los datos",
                 "datos": respuesta
             })
         }catch(error){
